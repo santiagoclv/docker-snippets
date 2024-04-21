@@ -27,7 +27,7 @@ RUN yum install httpd -y
 CMD apachectl -DFOREGROUND
 ```
 
-> docker build --tag apache-centos .
+> docker build --tag <image_name>:<tag> .
 
 * List all docker images locally
 
@@ -36,14 +36,15 @@ CMD apachectl -DFOREGROUND
 ## Docker Containers
 
 * Run in background
-> docker run .d --name container-name image-name
+> docker run .d --name <container_name> <image_name>
 
-* Mapping ports local-port:container-port
-> docker run .d --name container-name -p 80:80 image-name
+* Mapping ports 
+> docker run .d --name <container_name> -p <local_port>:<container_port> <image_name>
 
 * Run elixir
 
 > docker run -it --rm elixir:1.16.2
+> docker run -it --rm elixir:1.16.2 bash
 
 * Check for Containers running
 
@@ -51,4 +52,4 @@ CMD apachectl -DFOREGROUND
 
 * Remove Containers
 
-> docker rm -fv <name>
+> docker rm -fv <container_name>
